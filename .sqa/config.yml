@@ -1,19 +1,22 @@
 config:
-  credentials: []
-  project_repos: {}
+  credentials:
+  - id: upv_im_id
+    password_var: IM_PASS
+    username_var: IM_USER
+  - id: incd_openstack_id
+    password_var: OPENSTACK_PASS
+    username_var: OPENSTACK_USER
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: 1.7.0_no_kubectl
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
 environment:
   JPL_DOCKERFORCEBUILD: enabled
 sqa_criteria:
-  QC.Sty:
+  SvcQC.Dep:
     repos:
       this_repo:
         commands:
-        - hadolint --ignore SC2046 --ignore DL3059 --ignore SC2086 --ignore DL3008
-          --ignore DL3009 --ignore DL3047 worker-image/Dockerfile
-        container: scipion-hadolint
-      this_repo__2:
-        commands:
-        - hadolint --ignore SC2046 --ignore DL3002 --ignore DL3059 --ignore SC2086
-          --ignore DL3008 --ignore DL3003 --ignore DL4006 --ignore SC2028 master-image/Dockerfile
-        container: scipion-hadolint
-timeout: 600
+        - /usr/bin/env sh .sqa/script.tasty-cerulean-kingfisher.sh
+        container: svcqc.dep_nippy-puce-flounder
+timeout: 1800
