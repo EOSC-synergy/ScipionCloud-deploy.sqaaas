@@ -12,6 +12,7 @@ fi
 printf "$(cat /im/auth.dat)" "${IM_USER}" "${IM_PASS}" "${OPENSTACK_USER}" "${OPENSTACK_PASS}" > /im/auth.dat
 echo "Generated auth.dat file:"
 ls -l /im/auth.dat
+cat /im/auth.dat
 echo
 
 echo "Printing IM config file: ./im-topology-jenkins.yaml"
