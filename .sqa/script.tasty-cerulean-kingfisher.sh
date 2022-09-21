@@ -3,7 +3,7 @@ cat <<EOF >> /im/auth.dat
 # InfrastructureManager auth
 type = InfrastructureManager; username = %s; password = %s
 # OpenStack site using standard user, password, tenant format
-id = incd; type = OpenStack; host = https://stratus.ncg.ingrid.pt:5000; username = %s; password = %s; tenant = eosc-synergy; tenant_domain_id = None; domain = default; auth_version = 3.x_password
+id = incd; type = OpenStack; host = https://stratus.ncg.ingrid.pt:5000; username = %s; password = %s; tenant = eosc-synergy; domain = default; auth_version = 3.x_password
 EOF
 if [ -z "$IM_USER" ] || [ -z "$IM_PASS" ] || [ -z "$OPENSTACK_USER" ] || [ -z "$OPENSTACK_PASS" ]; then
   echo 'One or more credential variables are undefined (required: IM_USER, IM_PASS, OPENSTACK_USER, OPENSTACK_PASS)'
