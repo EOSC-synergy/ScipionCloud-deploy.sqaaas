@@ -3,7 +3,7 @@ config:
   - id: upv_im_id
     password_var: IM_PASS
     username_var: IM_USER
-  - id: incd_openstack_id
+  - id: ifca_openstack_id
     password_var: OPENSTACK_PASS
     username_var: OPENSTACK_USER
   project_repos:
