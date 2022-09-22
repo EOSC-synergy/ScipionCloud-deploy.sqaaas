@@ -19,4 +19,4 @@ sqa_criteria:
         commands:
         - /usr/bin/env sh .sqa/script.tasty-cerulean-kingfisher.sh
         container: svcqc.dep_nippy-puce-flounder
-timeout: 1800
+timeout: 5400
